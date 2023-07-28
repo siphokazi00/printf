@@ -1,16 +1,15 @@
 #include "main.h"
 
-/************************* WRITE HANDLE *************************/
 /**
- * handle_write_char - Prints a string
- * @c: char types.
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags.
- * @width: get width.
- * @precision: precision specifier
- * @size: Size specifier
- *
- * Return: Number of chars printed.
+ * handle_write_char - Handles writing a single character
+ * to the buffer with padding.
+ * @c: The character to be written to the buffer.
+ * @buffer: The buffer to store the character and padding.
+ * @flags: The flags used for formatting.
+ * @width: The width used for formatting.
+ * @precision: The precision used for formatting.
+ * @size: The size used for formatting.
+ * Return: The number of characters written to the standard output.
  */
 int handle_write_char(char c, char buffer[],
 	int flags, int width, int precision, int size)
@@ -44,18 +43,17 @@ int handle_write_char(char c, char buffer[],
 	return (write(1, &buffer[0], 1));
 }
 
-/************************* WRITE NUMBER *************************/
 /**
- * write_number - Prints a string
- * @is_negative: Lista of arguments
- * @ind: char types.
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width.
- * @precision: precision specifier
- * @size: Size specifier
+ * write_number - Handles writing a formatted number to the stdout.
+ * @is_negative: A flag indicating if no. is negative (1) or not (0).
+ * @ind: The index where the number starts in the buffer.
+ * @buffer: The buffer containing the formatted number.
+ * @flags: The flags used for formatting.
+ * @width: The width used for formatting.
+ * @precision: The precision used for formatting.
+ * @size: The size used for formatting.
  *
- * Return: Number of chars printed.
+ * Return: The number of characters written to the standard output.
  */
 int write_number(int is_negative, int ind, char buffer[],
 	int flags, int width, int precision, int size)
@@ -79,17 +77,17 @@ int write_number(int is_negative, int ind, char buffer[],
 }
 
 /**
- * write_num - Write a number using a bufffer
- * @ind: Index at which the number starts on the buffer
- * @buffer: Buffer
- * @flags: Flags
- * @width: width
- * @prec: Precision specifier
- * @length: Number length
- * @padd: Pading char
- * @extra_c: Extra char
+ * write_num - Handles writing a formatted number to the stdout.
+ * @ind: The index where the number starts in the buffer.
+ * @buffer: The buffer containing the formatted number.
+ * @flags: The flags used for formatting.
+ * @width: The width used for formatting.
+ * @prec: The precision used for formatting.
+ * @length: The total length of the number.
+ * @padd: The character used for padding.
+ * @extra_c: An extra character to display.
  *
- * Return: Number of printed chars.
+ * Return: The number of characters written to the standard output.
  */
 int write_num(int ind, char buffer[],
 	int flags, int width, int prec,
@@ -138,16 +136,15 @@ int write_num(int ind, char buffer[],
 }
 
 /**
- * write_unsgnd - Writes an unsigned number
- * @is_negative: Number indicating if the num is negative
- * @ind: Index at which the number starts in the buffer
- * @buffer: Array of chars
- * @flags: Flags specifiers
- * @width: Width specifier
- * @precision: Precision specifier
- * @size: Size specifier
- *
- * Return: Number of written chars.
+ * write_unsgnd - Handles writing a formatted unsigned number to the stdout.
+ * @is_negative: Indicates if the number is negative.
+ * @ind: The index where the number starts in the buffer.
+ * @buffer: The buffer containing the formatted number.
+ * @flags: The flags used for formatting.
+ * @width: The width used for formatting.
+ * @precision: The precision used for formatting.
+ * @size: The size specifier used for formatting.
+ * Return: The number of characters written to the stdout.
  */
 int write_unsgnd(int is_negative, int ind,
 	char buffer[],
@@ -196,17 +193,17 @@ int write_unsgnd(int is_negative, int ind,
 }
 
 /**
- * write_pointer - Write a memory address
- * @buffer: Arrays of chars
- * @ind: Index at which the number starts in the buffer
- * @length: Length of number
- * @width: Wwidth specifier
- * @flags: Flags specifier
- * @padd: Char representing the padding
- * @extra_c: Char representing extra char
- * @padd_start: Index at which padding should start
+ * write_pointer - Handles writing a formatted pointer address to the stdout.
+ * @buffer: The buffer containing the formatted pointer address.
+ * @ind: The index where the pointer address starts in the buffer.
+ * @length: The length of the formatted pointer address.
+ * @width: The width used for formatting.
+ * @flags: The flags used for formatting.
+ * @padd: The character used for padding.
+ * @extra_c: The extra character to display before the pointer address.
+ * @padd_start: The starting index for padding in the buffer.
  *
- * Return: Number of written chars.
+ * Return: The number of characters written to the standard output.
  */
 int write_pointer(char buffer[], int ind, int length,
 	int width, int flags, char padd, char extra_c, int padd_start)

@@ -1,15 +1,16 @@
 #include "main.h"
 
-/****************** PRINT POINTER ******************/
 /**
- * print_pointer - Prints the value of a pointer variable
- * @types: List a of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Number of chars printed.
+ * print_pointer - Converts and prints a pointer address
+ * in hexadecimal format.
+ * @types: A va_list containing the arguments.
+ * @buffer: The buffer to store the formatted output.
+ * @flags: Flags for formatting the output.
+ * @width: Minimum field width for the output.
+ * @precision: Precision for the output.
+ * @size: The size of the buffer.
+ *
+ * Return: The number of characters written to the buffer.
  */
 int print_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
@@ -52,16 +53,16 @@ int print_pointer(va_list types, char buffer[],
 		width, flags, padd, extra_c, padd_start));
 }
 
-/************************* PRINT NON PRINTABLE *************************/
 /**
- * print_non_printable - Prints ascii codes in hexa of non printable chars
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Number of chars printed
+ * print_non_printable - Converts and prints non-printable chars as hex codes.
+ * @types: A va_list containing the arguments.
+ * @buffer: The buffer to store the formatted output.
+ * @flags: Flags for formatting the output.
+ * @width: Minimum field width for the output.
+ * @precision: Precision for the output.
+ * @size: The size of the buffer.
+ *
+ * Return: The number of characters written to the buffer.
  */
 int print_non_printable(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
@@ -92,18 +93,17 @@ int print_non_printable(va_list types, char buffer[],
 	return (write(1, buffer, i + offset));
 }
 
-/************************* PRINT REVERSE *************************/
 /**
- * print_reverse - Prints reverse string.
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Numbers of chars printed
+ * print_reverse - Prints a string in reverse.
+ * @types: A va_list containing the arguments.
+ * @buffer: The buffer to store the formatted output.
+ * @flags: Flags for formatting the output.
+ * @width: Minimum field width for the output.
+ * @precision: Precision for the output.
+ * @size: The size of the buffer.
+ *
+ * Return: The number of characters written to the buffer.
  */
-
 int print_reverse(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
@@ -135,16 +135,17 @@ int print_reverse(va_list types, char buffer[],
 	}
 	return (count);
 }
-/************************* PRINT A STRING IN ROT13 *************************/
+
 /**
- * print_rot13string - Print a string in rot13.
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Numbers of chars printed
+ * print_rot13string - Prints a string using ROT13 encryption.
+ * @types: A va_list containing the arguments.
+ * @buffer: The buffer to store the formatted output.
+ * @flags: Flags for formatting the output.
+ * @width: Minimum field width for the output.
+ * @precision: Precision for the output.
+ * @size: The size of the buffer.
+ *
+ * Return: The number of characters written to the buffer.
  */
 int print_rot13string(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
